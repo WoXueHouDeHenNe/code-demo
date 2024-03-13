@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.MybatisDemoMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.bean.User">
+        <id column="ID" property="id" jdbcType="INTEGER"/>
+        <result column="USER_NAME" property="userName" jdbcType="VARCHAR"/>
+        <result column="SUBJECT_NAME" property="subjects" jdbcType="VARCHAR"
+                typeHandler="com.example.demo.config.StringArrayTypeHandler"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID, USER_NAME, SUBJECT_NAME
+    </sql>
+
+    <select id="listUser" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM user u LEFT JOIN subject s ON u.ID = s.USER_ID
+    </select>
+</mapper>
