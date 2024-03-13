@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 6wq$8Zdt
+    url: jdbc:mysql://localhost:3306/code_demo
+
+
+# mybatis 配置
+mybatis:
+  # 映射文件路径
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    # 下划线转驼峰
+    map-underscore-to-camel-case: true
+  # 实体类所在包路径
+  type-handlers-package: com.example.demo.bean
