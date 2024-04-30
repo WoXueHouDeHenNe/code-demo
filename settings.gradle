@@ -1,3 +1,4 @@
 rootProject.name = 'code-demo'
 include 'swagger-knife4j'
 include 'springboot-mybatis'
+include 'springboot-i18n'
