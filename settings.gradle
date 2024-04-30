@@ -1,2 +1,2 @@
 rootProject.name = 'code-demo'
-
+include 'springboot-i18n'
