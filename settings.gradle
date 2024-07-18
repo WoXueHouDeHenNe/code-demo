@@ -3,4 +3,5 @@ include 'swagger-knife4j'
 include 'springboot-mybatis'
 include 'springboot-i18n'
 include 'springboot-jackson'
+include 'springboot-aop'
 
