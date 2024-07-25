@@ -1,12 +1,10 @@
 package com.example.demo.controller;
 
+import com.example.demo.bean.User;
 import jakarta.annotation.Resource;
-import org.springframework.context.MessageSource;
 import org.springframework.context.support.ResourceBundleMessageSource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Locale;
 
@@ -31,5 +29,10 @@ public class SpringBootI18nController {
         System.out.println(message);
 
         return message;
+    }
+
+    @PostMapping("/create")
+    public User createMessage(@Validated @RequestBody User user) {
+        return user;
     }
 }
